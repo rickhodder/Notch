@@ -6,13 +6,13 @@ For Example, considering the following Notch:
 Server
  * API
     * USPS
-            Methods
-                GetAddressInformationByPostalCode
-                GetForecastByState
-    CSV
-        Fields
-            PostalCode
-            ForecastText            
+      * Methods
+        * GetAddressInformationByPostalCode
+        * GetForecastByState
+      * CSV
+        * Fields
+            * PostalCode
+            * ForecastText            
 Server
     API
         Weather
