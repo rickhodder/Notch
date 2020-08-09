@@ -4,20 +4,21 @@ Using simple tab-indented (notched) text to represent the hierarchical design of
 For Example, considering the following Notch:
 `    
 Server
-  API
-    USPS
-      Methods
-        GetAddressInformationByPostalCode
-        GetForecastByState
-  CSV
-    Fields
-      PostalCode     
+    API
+        USPS
+            Methods
+                GetAddressInformationByPostalCode
+                GetForecastByState
+    CSV
+        Fields
+            PostalCode
+            ForecastText            
 Server
-  API
-    Weather
-      Methods
-        GetForecastByPostalCode
-        GetForecastByState
+    API
+        Weather
+            Methods
+                GetForecastByPostalCode
+                GetForecastByState
 DatabaseServer
   Database
     Weather
