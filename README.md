@@ -5,7 +5,7 @@ For Example, considering the following Notch:
 
 Server
   * API
-    * USPS
+    * US  PS
       * Methods
         * GetAddressInformationByPostalCode
         * GetForecastByState
@@ -14,27 +14,27 @@ Server
             * PostalCode
             * ForecastText            
 Server
-    API
-        Weather
-            Methods
-                GetForecastByPostalCode
-                GetForecastByState
+  * API
+    * Weather
+      * Methods
+        * GetForecastByPostalCode
+        * GetForecastByState
 DatabaseServer
-  Database
-    Weather
-      Tables
-        Forecast
-          Fields
-            ForecastDate
-            LatLongRectangle
-            Description
-            State
-            PostalCode
-        Satellite
-          Fields
-            Name
-            PolarCoordinates
-            OwningCountry
+  * Database
+     * Weather
+       * Tables
+         * Forecast
+           * Fields
+             * ForecastDate
+             * LatLongRectangle
+             * Description
+             * State
+             * PostalCode
+           * Satellite
+             * Fields
+               * Name
+               * PolarCoordinates
+               * OwningCountry
 
 Once parsed, you can run a query asking for  
 - APIs in the system
