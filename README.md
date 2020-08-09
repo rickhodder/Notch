@@ -4,7 +4,7 @@ Using simple tab-indented (notched) text to represent the hierarchical design of
 For Example, considering the following Notch:
 
 Server
- * API
+  * API
     * USPS
       * Methods
         * GetAddressInformationByPostalCode
