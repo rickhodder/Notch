@@ -30,11 +30,11 @@ DatabaseServer
              * Description
              * State
              * PostalCode
-           * Satellite
-             * Fields
-               * Name
-               * PolarCoordinates
-               * OwningCountry
+         * Satellite
+           * Fields
+             * Name
+             * PolarCoordinates
+             * OwningCountry
 
 Once parsed, you can run a query asking for  
 - APIs in the system
