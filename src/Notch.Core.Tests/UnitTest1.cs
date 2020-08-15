@@ -1,4 +1,3 @@
-using System;
 using System.Linq;
 using Xunit;
 using Xunit.Abstractions;
@@ -7,11 +6,11 @@ namespace Notch.Core.Tests
 {
     public class UnitTest1
     {
-        private ITestOutputHelper output;
+        private readonly ITestOutputHelper _output;
 
         public UnitTest1(ITestOutputHelper output)
         {
-            this.output = output;
+            this._output = output;
         }
 
         [Fact]
@@ -31,8 +30,6 @@ namespace Notch.Core.Tests
             var apis =
                 root.Find(n => n.Content.Trim().ToUpper() == "API");
 
-            var x = apis.ToList();
-
             Assert.Equal(2, apis.Count());
 
         }
@@ -42,7 +39,7 @@ namespace Notch.Core.Tests
         {
             var root = ParseHierarchyHappyPath();
             var apis =
-                root.Find(n => n.Content.Trim().ToUpper() == "API");
+                root.Find(n => n.Content.Trim().ToUpper() == "API").ToList();
 
             
             var code = "";
@@ -52,9 +49,9 @@ namespace Notch.Core.Tests
                 code += CreateApiEndpointClasses(api);
             }
 
-            output.WriteLine(code);
+            _output.WriteLine(code);
 
-            Assert.Equal(2, apis.Count());
+            Assert.Equal(2, apis.Count);
 
         }
 
@@ -69,12 +66,10 @@ namespace Notch.Core.Tests
             {
                 result+=$"public class {method.Content}Endpoint : ApiEndpoint<{endpoint.Content}>\r\n" + "{";
 
-                result += $"\r\n\tpublic IActionResult Execute()\r\n";
+                result += "\r\n\tpublic IActionResult Execute()\r\n";
                 result += "\t{\r\n\t\t /* future method */ \r\n\t}\r\n";
                 result += "}\r\n\r\n";
-
             }
-
 
             return result;
         }
@@ -90,17 +85,17 @@ namespace Notch.Core.Tests
 
             var methods = api.Add(new Node { Content = "Method" });
 
-            var method1 = methods.Add(new Node { Content = "Parse" });
+            methods.Add(new Node { Content = "Parse" });
 
-            var method2 = methods.Add(new Node { Content = "Compile" });
+            methods.Add(new Node { Content = "Compile" });
 
             api = server.Add(new Node { Content = "API" });
 
             methods = api.Add(new Node { Content = "Method" });
 
-            method1 = methods.Add(new Node { Content = "Google" });
+            methods.Add(new Node { Content = "Google" });
 
-            method2 = methods.Add(new Node { Content = "Bing" });
+            methods.Add(new Node { Content = "Bing" });
 
             return rootNode;
         }
